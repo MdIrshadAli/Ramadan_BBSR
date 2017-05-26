@@ -1,0 +1,157 @@
+
+
+.margin_0 {
+  margin: 0
+}
+
+.pad_0 {
+  padding: 0
+}
+
+.banner-container {
+  background: url('../images/banner2.jpg') no-repeat center center;
+  width: 100%;
+}
+
+.banner-text {
+  padding-top: 30%;
+  padding-bottom: 5%;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 500px;
+  font-size: 3.4em;
+  font-family: Roboto;
+  text-shadow:rgb(31, 42, 31) 1px 1px 1px;
+}
+
+.hud-div {
+  background-color: rgba(0,0,0,0.6);
+  padding: 20px;
+  margin: 25px 0;
+}
+
+label {
+  color: white;
+  font-size: 1.05em;
+  letter-spacing: 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.dropdown-toggle {
+    width: 90px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-submit {
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-weight: 400;
+  padding: 8px 16px;
+  background-color: #00bcd5;
+}
+
+.workflow-text-container {
+  padding-bottom: 10px;
+}
+
+.workflow-container {
+  padding: 60px 0;
+}
+
+.workflow-container .container {
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.workflow-text {
+  color: #ff5a60;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 2.5em;
+}
+
+.img-responsive {
+  transform: translateX(50%);
+}
+
+.workflow-info-container {
+  margin: 20px 0;
+}
+
+.workflow-step-name {
+  font-size: 1.5em;
+  margin: 10px 0;
+  display: block;
+  cursor: pointer;
+}
+
+.workflow-step-desc {
+  color: #72727d;
+  font-size: 1.1em;
+  padding-bottom: 10px;
+}
+
+.nav-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.nav-btn:hover{
+  color: white;
+}
+
+.banner-navbar .container {
+  padding: 15px 100px;
+}
+
+.modal-label {
+  color: #72727d;
+}
+
+.lightgray-text {
+  color: #72727d;
+  font-size: 0.9em;
+  padding: 0 10px;
+}
+
+.modal-btn {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 2px 3px 12px #72727d;
+  padding: 5px 0;
+  font-size: 1.2em;
+}
+
+
+.new-user-box {
+  margin: 30px 0;
+}
+
+.new-user-text {
+  color: #72727d;
+  font-size: 1.2em;
+}
+
+.new-user-link {
+  display: block;
+  font-size: 1.1em;
+}
+
+#login-modal {
+  width: 450px;
+  margin: 0 auto;
+  border: none;
+}
+
+#login-modal .modal-dialog {
+  width: 90%;
+}

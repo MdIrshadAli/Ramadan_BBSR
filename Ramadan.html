@@ -1,0 +1,341 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  font-size: 40px;
+}
+.div1{
+ text-align: left;
+ }
+. div2{
+ text-align: right;
+ }
+ table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+</head>
+<body background="ramadan.jpg">
+
+<p id="remaining"></p>
+<p><label>Time Reamining For Iftar :</label></p>
+<p id="duration"></p>
+<p><label>Time Duraton of Roza today : </label></p>
+<script>
+// Set the date we're counting down to
+
+var countEndTime = new Date("May 26, 2017 18:23:00").getTime();
+var countStartTime = new Date("May 26, 2017 03:45:00").getTime();
+
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countEndTime - now;
+    var duration = countEndTime - countStartTime;
+
+    // Time calculations for days, hours, minutes and seconds
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    var totalHour = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var totalMinutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+    var totalSeconds = Math.floor((duration % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("remaining").innerHTML = hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    
+    document.getElementById("duration").innerHTML = totalHour + "h "
+    + totalMinutes + "m " + totalSeconds + "s ";
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("remaining").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
+                <div class="div1"> Today  :  1st Ramadan 1438  </div>
+                <div class="div1"> Date   :  27th May 2017  </div>
+                <div class="div2"> Suhoor Time :  03:45 A.M		
+                <tab1 class="div2">Iftar Time  :  06:25 P.M</tab1></div>
+  <p><label>Ramadan Timetable 2017 </label></p>              
+<table>
+  <tr>
+    <th>Ramadan </th>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Suhoor</th>
+    <th>Iftar</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td> 01</td>
+    <td>27 May 2017</td>
+    <td>Saturday</td>
+    <td>03:45</td>
+    <td>18:25</td>
+     <td>Germany</td>
+  </tr>
+  
+    <tr>
+    <td> 02</td>
+    <td>28 May 2017</td>
+    <td>Sunday</td>
+    <td>03:45</td>
+    <td>18:26</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 03</td>
+    <td>29 May 2017</td>
+    <td>Monday</td>
+    <td>03:45</td>
+    <td>18:26</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 04</td>
+    <td>30 May 2017</td>
+    <td>Tuesday</td>
+    <td>03:44</td>
+    <td>18:27</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 05</td>
+    <td>31 May 2017</td>
+    <td>Wednesday</td>
+    <td>03:44</td>
+    <td>18:27</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 06</td>
+    <td>01 June 2017</td>
+    <td>Thursday</td>
+    <td>03:44</td>
+    <td>18:27</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 07</td>
+    <td>02 June 2017</td>
+    <td>Friday</td>
+    <td>03:44</td>
+    <td>18:28</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 08</td>
+    <td>03 June 2017</td>
+    <td>Saturday</td>
+    <td>03:44</td>
+    <td>18:29</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 09</td>
+    <td>04 June 2017</td>
+    <td>Sunday</td>
+    <td>03:43</td>
+    <td>18:29</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 10</td>
+    <td>05 June 2017</td>
+    <td>Monday</td>
+    <td>03:43</td>
+    <td>18:30</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 11</td>
+    <td>06 June 2017</td>
+    <td>Tuesday</td>
+    <td>03:43</td>
+    <td>18:30</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 12</td>
+    <td>07 June 2017</td>
+    <td>Wednesday</td>
+    <td>03:43</td>
+    <td>18:30</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 13</td>
+    <td>08 June 2017</td>
+    <td>Thursday</td>
+    <td>03:43</td>
+    <td>18:30</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 14</td>
+    <td>09 June 2017</td>
+    <td>Friday</td>
+    <td>03:43</td>
+    <td>18:31</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 15</td>
+    <td>10 June 2017</td>
+    <td>Saturday</td>
+    <td>03:43</td>
+    <td>18:31</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 16</td>
+    <td>11 June 2017</td>
+    <td>Sunday</td>
+    <td>03:43</td>
+    <td>18:32</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 17</td>
+    <td>12 June 2017</td>
+    <td>Monday</td>
+    <td>03:43</td>
+    <td>18:32</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 18</td>
+    <td>13 June 2017</td>
+    <td>Tuesday</td>
+    <td>03:43</td>
+    <td>18:32</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 19</td>
+    <td>14 June 2017</td>
+    <td>Wednesday</td>
+    <td>03:43</td>
+    <td>18:32</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 20</td>
+    <td>15 June 2017</td>
+    <td>Thursday</td>
+    <td>03:43</td>
+    <td>18:33</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 21</td>
+    <td>16 June 2017</td>
+    <td>Friday</td>
+    <td>03:43</td>
+    <td>18:33</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 22</td>
+    <td>17 June 2017</td>
+    <td>Saturday</td>
+    <td>03:43</td>
+    <td>18:33</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 23</td>
+    <td>18 June 2017</td>
+    <td>Sunday</td>
+    <td>03:44</td>
+    <td>18:34</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 24</td>
+    <td>19 June 2017</td>
+    <td>Monday</td>
+    <td>03:44</td>
+    <td>18:34</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 25</td>
+    <td>20 June 2017</td>
+    <td>Tueaday</td>
+    <td>03:44</td>
+    <td>18:34</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 26</td>
+    <td>21 June 2017</td>
+    <td>Wednesday</td>
+    <td>03:44</td>
+    <td>18:35</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 27</td>
+    <td>22 June 2017</td>
+    <td>Thursday</td>
+    <td>03:45</td>
+    <td>18:35</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 28</td>
+    <td>23 June 2017</td>
+    <td>Friday</td>
+    <td>03:45</td>
+    <td>18:35</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 29</td>
+    <td>24 June 2017</td>
+    <td>Saturday</td>
+    <td>03:45</td>
+    <td>18:35</td>
+     <td>Germany</td>
+  </tr>
+    <tr>
+    <td> 30</td>
+    <td>25 June 2017</td>
+    <td>Sunday</td>
+    <td>03:45</td>
+    <td>18:35</td>
+     <td>Germany</td>
+  </tr>
+</table>
+                
+</body>
+</html>
+
+
