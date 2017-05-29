@@ -43,10 +43,19 @@
 		tr:nth-child(even) {
 			background-color: #dddddd;
 		}
+				
+		.row-even {
+			color: black;
+		}
+		
+		.row-odd {
+			color: white;
+		}
 		</style>
 </head>
 <body background="ramadan.jpg">
-	<div class="centre">
+	<div class="wrapper">
+		<div class="centre">
 		<p id="remaining"></p>
 		<p><label>Time Reamining For Iftar :</label></p>
 		<p id="duration"></p>
@@ -153,14 +162,14 @@
 			<!--To fill the table with javascript-->
 			for (var j = 0; j < 30; j++) {
 				if (j % 2 == 0) {
-					document.write("<tr><td>" + data[j].Sl_No + " </td>");
+					document.write("<tr class='row-odd'><td>" + data[j].Sl_No + " </td>");
 					document.write("<td>" + data[j].Date + "</td>");
 					document.write("<td>" + data[j].Day + "</td>");
 					document.write("<td>" + data[j].Suhoor + "</td>");
 					document.write("<td>" + data[j].Iftar + "</td>");
 					document.write("<td>" + data[j].Duration + "</td></tr>");
 				} else {
-					document.write("<tr  bgcolor='#aeb2bf'><td>" + data[j].Sl_No + " </td>");
+					document.write("<tr  bgcolor='#aeb2bf' class='row-even'><td>" + data[j].Sl_No + " </td>");
 					document.write("<td>" + data[j].Date + "</td>");
 					document.write("<td>" + data[j].Day + "</td>");
 					document.write("<td>" + data[j].Suhoor + "</td>");
@@ -228,7 +237,8 @@
 				}
 		
 	
-	</script>			
+	</script>	
+	</div>		
 </body>
 </html>
 
