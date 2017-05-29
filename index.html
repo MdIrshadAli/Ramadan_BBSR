@@ -126,11 +126,11 @@
 				var totalMinutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
 				var totalSeconds = Math.floor((duration % (1000 * 60)) / 1000);
 	
-				document.getElementById("remaining").innerHTML = hours + "h "
-				+ minutes + "m " + seconds + "s ";
+				document.getElementById("remaining").innerHTML = hours + " h : "
+				+ minutes + " m : " + seconds + " s ";
 				
-				document.getElementById("duration").innerHTML = totalHour + "h "
-				+ totalMinutes + "m " + totalSeconds + "s ";
+				document.getElementById("duration").innerHTML = totalHour + " h : "
+				+ totalMinutes + " m : " + totalSeconds + " s ";
 				if (distance < 0) {
 					clearInterval(x);
 					document.getElementById("remaining").innerHTML = "EXPIRED";
