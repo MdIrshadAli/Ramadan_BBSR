@@ -2,339 +2,233 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<style>
-p {
-  text-align: center;
-  font-size: 40px;
-}
-.div1{
- text-align: left;
- }
-. div2{
- text-align: right;
- }
- table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+	<script type="text/javascript" src="timeTable.json"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<style>
+		p {
+		  text-align: center;
+		  font-size: 40px;
+		}
+		.div1{
+		 text-align: left;
+		 }
+		. div2{
+		 text-align: right;
+		 }
+		 table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
 
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
+		td, th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+		
+		.topleft {
+		position: absolute;
+		top: 180px;
+		left: 16px;
+		font-size: 18px;
+		}
+		.topright {
+		position: absolute;
+		top: 180px;
+		right: 16px;
+		font-size: 18px;
+		}
 
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
-
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+		</style>
 </head>
 <body background="ramadan.jpg">
+	<div class="centre">
+		<p id="remaining"></p>
+		<p><label>Time Reamining For Iftar :</label></p>
+		<p id="duration"></p>
+		<p><label>Time Duraton of Today's Roza  : </label></p>
+	</div>
+	<script>
+	var text = '[' +
+		 '{ "Sl_No": "1", "Date": "May 28, 2017", "Day": "Sunday", "Suhoor": "3:45", "Iftar": "18:26", "Duration": "" },' +
+		 '{ "Sl_No": "2", "Date": "May 29, 2017", "Day": "Monday", "Suhoor": "3:45", "Iftar": "18:26", "Duration": "" },' +
+		 '{ "Sl_No": "3", "Date": "May 30, 2017", "Day": "Tuesday", "Suhoor": "3:44", "Iftar": "18:27", "Duration": "" },' +
+		 '{ "Sl_No": "4", "Date": "May 31, 2017", "Day": "Wednesday", "Suhoor": "3:44", "Iftar": "18:27", "Duration": "" },' +
+		 '{ "Sl_No": "5", "Date": "June 1, 2017", "Day": "Thursday", "Suhoor": "3:44", "Iftar": "18:27", "Duration": "" },' +
+		 '{ "Sl_No": "6", "Date": "June 2, 2017", "Day": "Friday", "Suhoor": "3:44", "Iftar": "18:28", "Duration": "" },' +
+		 '{ "Sl_No": "7", "Date": "June 3, 2017", "Day": "Saturday", "Suhoor": "3:44", "Iftar": "18:29", "Duration": "" },' +
+		 '{ "Sl_No": "8", "Date": "June 4, 2017", "Day": "Sunday", "Suhoor": "3:43", "Iftar": "18:29", "Duration": "" },' +
+		 '{ "Sl_No": "9", "Date": "June 5, 2017", "Day": "Monday", "Suhoor": "3:43", "Iftar": "18:30", "Duration": "" },' +
+		 '{ "Sl_No": "10", "Date": "June 6, 2017", "Day": "Tuesday", "Suhoor": "3:43", "Iftar": "18:30", "Duration": "" },' +
+		 '{ "Sl_No": "11", "Date": "June 7, 2017", "Day": "Wednesday", "Suhoor": "3:43", "Iftar": "18:30", "Duration": "" },' +
+		 '{ "Sl_No": "12", "Date": "June 8, 2017", "Day": "Thursday", "Suhoor": "3:43", "Iftar": "18:30", "Duration": "" },' +
+		 '{ "Sl_No": "13", "Date": "June 9, 2017", "Day": "Friday", "Suhoor": "3:43", "Iftar": "18:31", "Duration": "" },' +
+		 '{ "Sl_No": "14", "Date": "June 10, 2017", "Day": "Saturday", "Suhoor": "3:43", "Iftar": "18:31", "Duration": "" },' +
+		 '{ "Sl_No": "15", "Date": "June 11, 2017", "Day": "Sunday", "Suhoor": "3:43", "Iftar": "18:32", "Duration": "" },' +
+		 '{ "Sl_No": "16", "Date": "June 12, 2017", "Day": "Monday", "Suhoor": "3:43", "Iftar": "18:32", "Duration": "" },' +
+		 '{ "Sl_No": "17", "Date": "June 13, 2017", "Day": "Tuesday", "Suhoor": "3:43", "Iftar": "18:32", "Duration": "" },'+
+		 '{ "Sl_No": "18", "Date": "June 14, 2017", "Day": "Wednesday", "Suhoor": "3:43", "Iftar": "18:32", "Duration": "" },' +
+		 '{ "Sl_No": "19", "Date": "June 15, 2017", "Day": "Thursday", "Suhoor": "3:43", "Iftar": "18:33", "Duration": "" },' +
+		 '{ "Sl_No": "20", "Date": "June 16, 2017", "Day": "Friday", "Suhoor": "3:43", "Iftar": "18:33", "Duration": "" },' +
+		 '{ "Sl_No": "21", "Date": "June 17, 2017", "Day": "Saturday", "Suhoor": "3:43", "Iftar": "18:33", "Duration": "" },' +
+		 '{ "Sl_No": "22", "Date": "June 18, 2017", "Day": "Sunday", "Suhoor": "3:44", "Iftar": "18:34", "Duration": "" },' +
+		 '{ "Sl_No": "23", "Date": "June 19, 2017", "Day": "Monday", "Suhoor": "3:44", "Iftar": "18:34", "Duration": "" },' +
+		 '{ "Sl_No": "24", "Date": "June 20, 2017", "Day": "Tuesday", "Suhoor": "3:44", "Iftar": "18:34", "Duration": "" },' +
+		 '{ "Sl_No": "25", "Date": "June 21, 2017", "Day": "Wednesday", "Suhoor": "3:44", "Iftar": "18:35", "Duration": "" },' +
+		 '{ "Sl_No": "26", "Date": "June 22, 2017", "Day": "Thursday", "Suhoor": "3:45", "Iftar": "18:35", "Duration": "" },' +
+		 '{ "Sl_No": "27", "Date": "June 23, 2017", "Day": "Friday", "Suhoor": "3:45", "Iftar": "18:35", "Duration": "" },' +
+		 '{ "Sl_No": "28", "Date": "June 24, 2017", "Day": "Saturday", "Suhoor": "3:45", "Iftar": "18:35", "Duration": "" },' +
+		 '{ "Sl_No": "29", "Date": "June 25, 2017", "Day": "Sunday", "Suhoor": "3:45", "Iftar": "18:35", "Duration": "" },'+
+		 '{ "Sl_No": "30", "Date": "June 26, 2017", "Day": "Monday", "Suhoor": "3:45", "Iftar": "18:35", "Duration": "" }]';
 
-<p id="remaining"></p>
-<p><label>Time Reamining For Iftar :</label></p>
-<p id="duration"></p>
-<p><label>Time Duraton of Roza today : </label></p>
-<script>
-// Set the date we're counting down to
+		 data = JSON.parse(text);
+		
+		var dateObj = new Date();
+		var month = dateObj.getUTCMonth() + 1; //months from 1-12
+		var day = dateObj.getUTCDate();
+		var year = dateObj.getUTCFullYear();
+		if (month == 5){
+			month = 'May';
+		}else{
+			month = 'June';
+		}
+		var newdate = month + " " + day + ", "+ year;
 
-var countEndTime = new Date("May 26, 2017 18:23:00").getTime();
-var countStartTime = new Date("May 26, 2017 03:45:00").getTime();
+		for(var i = 0; i< 30; i++){
+			if(newdate == data[i].Date){
+				var countEndTime = new Date(newdate + ' '+ data[i].Iftar).getTime();
+				var countStartTime = new Date(newdate + ' '+ data[i].Suhoor).getTime();
+				
+				var x = setInterval(function() {
 
+				var now = new Date().getTime();
+				var distance = countEndTime - now;
+				var duration = countEndTime - countStartTime;
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	
+				var totalHour = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var totalMinutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+				var totalSeconds = Math.floor((duration % (1000 * 60)) / 1000);
+	
+				document.getElementById("remaining").innerHTML = hours + "h "
+				+ minutes + "m " + seconds + "s ";
+	
+				document.getElementById("duration").innerHTML = totalHour + "h "
+				+ totalMinutes + "m " + totalSeconds + "s ";
+				if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("remaining").innerHTML = "EXPIRED";
+				}
+			}, 1000);
+			}
+		}
+			
+		function calculateDuration(date,startTime,endTime){
+			var endtm = new Date( date + " "+ endTime).getTime();
+			var sttm = new Date( date + " "+ startTime).getTime();
+			var duration = endtm - sttm;
+			var totalHour = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var totalMinutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+			var totalSeconds = Math.floor((duration % (1000 * 60)) / 1000);
+	
+			return totalHour + ": "+ totalMinutes ;
+		}
 
-    // Get todays date and time
-    var now = new Date().getTime();
-    
-    // Find the distance between now an the count down date
-    var distance = countEndTime - now;
-    var duration = countEndTime - countStartTime;
+		function createtable() {
+			for(var i = 0; i< 30; i++){
+				 data[i].Duration = calculateDuration(data[i].Date,data[i].Suhoor,data[i].Iftar);
+	 
+				var today = new Date();
+				today.setDate(30);
+				var tomorrow = new Date();
+				tomorrow.setDate(today.getDate()+1);
+			}
+			<!--To fill the table with javascript-->
+			for (var j = 0; j < 30; j++) {
+				if (j % 2 == 0) {
+					document.write("<tr><td>" + data[j].Sl_No + " </td>");
+					document.write("<td>" + data[j].Date + "</td>");
+					document.write("<td>" + data[j].Day + "</td>");
+					document.write("<td>" + data[j].Suhoor + "</td>");
+					document.write("<td>" + data[j].Iftar + "</td>");
+					document.write("<td>" + data[j].Duration + "</td></tr>");
+				} else {
+					document.write("<tr  bgcolor='#aeb2bf'><td>" + data[j].Sl_No + " </td>");
+					document.write("<td>" + data[j].Date + "</td>");
+					document.write("<td>" + data[j].Day + "</td>");
+					document.write("<td>" + data[j].Suhoor + "</td>");
+					document.write("<td>" + data[j].Iftar + "</td>ß");
+					document.write("<td>" + data[j].Duration + "</td></tr>");
+				}
+			}
+		}
 
-    // Time calculations for days, hours, minutes and seconds
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    var totalHour = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var totalMinutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
-    var totalSeconds = Math.floor((duration % (1000 * 60)) / 1000);
-    
-    // Output the result in an element with id="demo"
-    document.getElementById("remaining").innerHTML = hours + "h "
-    + minutes + "m " + seconds + "s ";
-    
-    
-    document.getElementById("duration").innerHTML = totalHour + "h "
-    + totalMinutes + "m " + totalSeconds + "s ";
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("remaining").innerHTML = "EXPIRED";
-    }
-}, 1000);
-</script>
+	</script>
 
-                <div class="div1"> Today  :  1st Ramadan 1438  </div>
-                <div class="div1"> Date   :  27th May 2017  </div>
-                <div class="div2"> Suhoor Time :  03:45 A.M		
-                <tab1 class="div2">Iftar Time  :  06:25 P.M</tab1></div>
-  <p><label>Ramadan Timetable 2017 </label></p>              
-<table>
-  <tr>
-    <th>Ramadan </th>
-    <th>Date</th>
-    <th>Day</th>
-    <th>Suhoor</th>
-    <th>Iftar</th>
-    <th></th>
-  </tr>
-  <tr>
-    <td> 01</td>
-    <td>27 May 2017</td>
-    <td>Saturday</td>
-    <td>03:45</td>
-    <td>18:25</td>
-     <td>Germany</td>
-  </tr>
-  
-    <tr>
-    <td> 02</td>
-    <td>28 May 2017</td>
-    <td>Sunday</td>
-    <td>03:45</td>
-    <td>18:26</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 03</td>
-    <td>29 May 2017</td>
-    <td>Monday</td>
-    <td>03:45</td>
-    <td>18:26</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 04</td>
-    <td>30 May 2017</td>
-    <td>Tuesday</td>
-    <td>03:44</td>
-    <td>18:27</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 05</td>
-    <td>31 May 2017</td>
-    <td>Wednesday</td>
-    <td>03:44</td>
-    <td>18:27</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 06</td>
-    <td>01 June 2017</td>
-    <td>Thursday</td>
-    <td>03:44</td>
-    <td>18:27</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 07</td>
-    <td>02 June 2017</td>
-    <td>Friday</td>
-    <td>03:44</td>
-    <td>18:28</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 08</td>
-    <td>03 June 2017</td>
-    <td>Saturday</td>
-    <td>03:44</td>
-    <td>18:29</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 09</td>
-    <td>04 June 2017</td>
-    <td>Sunday</td>
-    <td>03:43</td>
-    <td>18:29</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 10</td>
-    <td>05 June 2017</td>
-    <td>Monday</td>
-    <td>03:43</td>
-    <td>18:30</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 11</td>
-    <td>06 June 2017</td>
-    <td>Tuesday</td>
-    <td>03:43</td>
-    <td>18:30</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 12</td>
-    <td>07 June 2017</td>
-    <td>Wednesday</td>
-    <td>03:43</td>
-    <td>18:30</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 13</td>
-    <td>08 June 2017</td>
-    <td>Thursday</td>
-    <td>03:43</td>
-    <td>18:30</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 14</td>
-    <td>09 June 2017</td>
-    <td>Friday</td>
-    <td>03:43</td>
-    <td>18:31</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 15</td>
-    <td>10 June 2017</td>
-    <td>Saturday</td>
-    <td>03:43</td>
-    <td>18:31</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 16</td>
-    <td>11 June 2017</td>
-    <td>Sunday</td>
-    <td>03:43</td>
-    <td>18:32</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 17</td>
-    <td>12 June 2017</td>
-    <td>Monday</td>
-    <td>03:43</td>
-    <td>18:32</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 18</td>
-    <td>13 June 2017</td>
-    <td>Tuesday</td>
-    <td>03:43</td>
-    <td>18:32</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 19</td>
-    <td>14 June 2017</td>
-    <td>Wednesday</td>
-    <td>03:43</td>
-    <td>18:32</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 20</td>
-    <td>15 June 2017</td>
-    <td>Thursday</td>
-    <td>03:43</td>
-    <td>18:33</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 21</td>
-    <td>16 June 2017</td>
-    <td>Friday</td>
-    <td>03:43</td>
-    <td>18:33</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 22</td>
-    <td>17 June 2017</td>
-    <td>Saturday</td>
-    <td>03:43</td>
-    <td>18:33</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 23</td>
-    <td>18 June 2017</td>
-    <td>Sunday</td>
-    <td>03:44</td>
-    <td>18:34</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 24</td>
-    <td>19 June 2017</td>
-    <td>Monday</td>
-    <td>03:44</td>
-    <td>18:34</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 25</td>
-    <td>20 June 2017</td>
-    <td>Tueaday</td>
-    <td>03:44</td>
-    <td>18:34</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 26</td>
-    <td>21 June 2017</td>
-    <td>Wednesday</td>
-    <td>03:44</td>
-    <td>18:35</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 27</td>
-    <td>22 June 2017</td>
-    <td>Thursday</td>
-    <td>03:45</td>
-    <td>18:35</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 28</td>
-    <td>23 June 2017</td>
-    <td>Friday</td>
-    <td>03:45</td>
-    <td>18:35</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 29</td>
-    <td>24 June 2017</td>
-    <td>Saturday</td>
-    <td>03:45</td>
-    <td>18:35</td>
-     <td>Germany</td>
-  </tr>
-    <tr>
-    <td> 30</td>
-    <td>25 June 2017</td>
-    <td>Sunday</td>
-    <td>03:45</td>
-    <td>18:35</td>
-     <td>Germany</td>
-  </tr>
-</table>
-                
+	
+	<div class="topleft"> 
+		<p id ="today"> </p>
+		<p id ="date"> </p>
+	</div>
+	<div class="topright">
+		<p id ="suhoor"> </p>
+		<p id ="iftar"> </p>
+	</div>
+				
+		<hr>			
+	  <p><label>Ramadan Timetable 2017 of Bhubaneshwar </label></p>              
+		<table>
+			<tr>
+				<th>Sl No</th>
+				<th>Date</th>
+				<th>Day</th>
+				<th>Suhoor</th>
+				<th>Iftar</th>
+				<th>Duration</th>
+			</tr>
+			<script>createtable();</script>
+		</table>
+	
+	<script>
+				for(var i = 0; i< 30; i++){
+					if(newdate == data[i].Date){
+					switch (data[i].Sl_No) {
+					case "1":
+						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"st" +  " Ramadan 1438 ";
+						break;
+					case "2":
+						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"nd" +  " Ramadan 1438 ";
+						break;
+					case "21":
+						 document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"st" +  " Ramadan 1438 ";
+						break;
+					case "22":
+						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"nd" +  " Ramadan 1438 ";
+						break;
+					case "3":
+						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"rd" +  " Ramadan 1438 ";
+						break;
+					case "23":
+						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"rd" +  " Ramadan 1438 ";
+						break;
+					default :
+						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
+				}
+						document.getElementById("date").innerHTML = "Date : " + data[i].Date ;
+						document.getElementById("suhoor").innerHTML =  "Suhoor Time : " +  data[i].Suhoor;
+						document.getElementById("iftar").innerHTML = "Iftar Time  :  " + data[i].Iftar;
+					}
+				}
+		
+	
+	</script>			
 </body>
 </html>
 
