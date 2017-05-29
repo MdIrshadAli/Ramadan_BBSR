@@ -119,12 +119,13 @@
 	
 				document.getElementById("remaining").innerHTML = hours + "h "
 				+ minutes + "m " + seconds + "s ";
-	
+				
 				document.getElementById("duration").innerHTML = totalHour + "h "
 				+ totalMinutes + "m " + totalSeconds + "s ";
 				if (distance < 0) {
 					clearInterval(x);
 					document.getElementById("remaining").innerHTML = "EXPIRED";
+					alert("EXPIRED!");
 				}
 			}, 1000);
 			}
