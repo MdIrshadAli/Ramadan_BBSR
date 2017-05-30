@@ -153,7 +153,7 @@
 				<div class="smalltext">MiliSecond</div>
 			  </div>
 		</div>
-		<p><label><b>Time Reamining For Iftar :</b></label></p>
+		<p><label><b><u>Time Reamining For Iftar :</u></b></label></p>
 		<div id="clockdiv2">
 
 		  <div>
@@ -173,7 +173,7 @@
 			<div class="smalltext">MiliSecond</div>
 		  </div>
 		</div>
-		<p><label><b>Time Duraton of Today's Roza  :</b> </label></p>
+		<p><label><b><u>Time Duraton of Today's Roza  :</u></b> </label></p>
 	</div>
 	<script>
 	var text = '[' +
@@ -267,7 +267,7 @@
 			var totalMinutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
 			var totalSeconds = Math.floor((duration % (1000 * 60)) / 1000);
 	
-			return totalHour + ": "+ totalMinutes ;
+			return totalHour + ": "+ ('0' + totalMinutes).slice(-2); 
 		}
 		for(var i = 0; i< 30; i++){
 			if(newdate == data[i].Date){
@@ -358,12 +358,12 @@
 
 	
 	<div class="topleft"> 
-		<p id ="today"> </p>
-		<p id ="date"> </p>
+		<b><p id ="today"> </p></b>
+		<b><p id ="date"> </p></b>
 	</div>
 	<div class="topright">
-		<p id ="suhoor"> </p>
-		<p id ="iftar"> </p>
+		<b><p id ="suhoor"> </p></b>
+		<b><p id ="iftar"> </p></b>
 	</div>
 				
 		<hr>			
@@ -385,26 +385,40 @@
 					if(newdate == data[i].Date){
 					switch (data[i].Sl_No) {
 					case "1":
-						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"st" +  " Ramadan 1438 ";
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"st" +  " Ramadan 1438 ";
 						break;
 					case "2":
-						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"nd" +  " Ramadan 1438 ";
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"nd" +  " Ramadan 1438 ";
 						break;
 					case "21":
-						 document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"st" +  " Ramadan 1438 ";
+						 document.getElementById("today").innerHTML =  "Today  : " +  data[i].Sl_No+"st" +  " Ramadan 1438 ";
 						break;
 					case "22":
-						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"nd" +  " Ramadan 1438 ";
+						document.getElementById("today").innerHTML =  "Today  : " +  data[i].Sl_No+"nd" +  " Ramadan 1438 ";
 						break;
 					case "3":
-						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"rd" +  " Ramadan 1438 ";
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"rd" +  " Ramadan 1438 ";
 						break;
 					case "23":
-						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"rd" +  " Ramadan 1438 ";
+						document.getElementById("today").innerHTML =  "Today  : " +  data[i].Sl_No+"rd" +  " Ramadan 1438 ";
 						break;
+					case "4":
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
+					case "5":
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
+					case "6":
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
+					case "7":
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
+					case "8":
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
+					case "9":
+						document.getElementById("today").innerHTML =  "Today  : 0" +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
+						
 					default :
-						document.getElementById("today").innerHTML =  "Today  :" +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
+						document.getElementById("today").innerHTML =  "Today  : " +  data[i].Sl_No+"th" +  " Ramadan 1438 ";
 				}
+				
 						document.getElementById("date").innerHTML = "Date : " + data[i].Date ;
 						document.getElementById("suhoor").innerHTML =  "Suhoor Time : " +  data[i].Suhoor;
 						document.getElementById("iftar").innerHTML = "Iftar Time  :  " + data[i].Iftar;
