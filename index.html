@@ -51,6 +51,10 @@
 		.row-odd {
 			color: white;
 		}
+		.row-selected  {
+			background-color: #333;
+			color: red;    
+		}
 		body{
 		text-align: center;
 		font-family: sans-serif;
@@ -87,7 +91,7 @@
 			display: inline-block;
 		}
 
-#clockdiv2{
+		#clockdiv2{
 			font-family: sans-serif;
 			color: #fff;
 			display: inline-block;
@@ -113,6 +117,10 @@
 			padding-top: 5px;
 			font-size: 16px;
 		}
+	label {
+		cursor: default;
+		
+	}
 		</style>
 </head>
 <body background="ramadan.jpg">
@@ -141,7 +149,7 @@
 				<div class="smalltext">MiliSecond</div>
 			  </div>
 		</div>
-		<p><label>Time Reamining For Iftar :</label></p>
+		<p><label><b>Time Reamining For Iftar :</b></label></p>
 		<div id="clockdiv2">
 
 		  <div>
@@ -161,7 +169,7 @@
 			<div class="smalltext">MiliSecond</div>
 		  </div>
 		</div>
-		<p><label>Time Duraton of Today's Roza  : </label></p>
+		<p><label><b>Time Duraton of Today's Roza  :</b> </label></p>
 	</div>
 	<script>
 	var text = '[' +
@@ -220,15 +228,25 @@
 			}
 			<!--To fill the table with javascript-->
 			for (var j = 0; j < 30; j++) {
+			
+
 				if (j % 2 == 0) {
-					document.write("<tr class='row-odd'><td>" + data[j].Sl_No + " </td>");
+					if(newdate == data[j].Date){
+						document.write("<tr class='row-selected'><td>" + data[j].Sl_No + " </td>");
+					}else{
+						document.write("<tr class='row-odd'><td>" + data[j].Sl_No + " </td>");
+					}
 					document.write("<td>" + data[j].Date + "</td>");
 					document.write("<td>" + data[j].Day + "</td>");
 					document.write("<td>" + data[j].Suhoor + "</td>");
 					document.write("<td>" + data[j].Iftar + "</td>");
 					document.write("<td>" + data[j].Duration + "</td></tr>");
 				} else {
-					document.write("<tr  bgcolor='#aeb2bf' class='row-even'><td>" + data[j].Sl_No + " </td>");
+					if(newdate == data[j].Date){
+						document.write("<tr class='row-selected'><td>" + data[j].Sl_No + " </td>");
+					}else{
+						document.write("<tr  bgcolor='#aeb2bf' class='row-even'><td>" + data[j].Sl_No + " </td>");
+					}
 					document.write("<td>" + data[j].Date + "</td>");
 					document.write("<td>" + data[j].Day + "</td>");
 					document.write("<td>" + data[j].Suhoor + "</td>");
@@ -249,6 +267,14 @@
 		}
 		for(var i = 0; i< 30; i++){
 			if(newdate == data[i].Date){
+			
+			    var tr = $(this).parent();
+					if(tr.hasClass("selected")) {
+						tr.removeClass("selected");
+					} else {
+						tr.addClass("selected");
+					}
+			
 			
 			  var clock = document.getElementById("clockdiv2");
 			  var msecSpan = clock.querySelector('.msec');
@@ -337,9 +363,9 @@
 	</div>
 				
 		<hr>			
-	  <p><label>Ramadan Timetable 2017 of Bhubaneshwar </label></p>              
+	  <p><label><b><u>Ramadan Timetable 2017 of Bhubaneshwar </u></b></label></p>              
 		<table>
-			<tr>
+			<tr class="unselected">
 				<th>Sl No</th>
 				<th>Date</th>
 				<th>Day</th>
