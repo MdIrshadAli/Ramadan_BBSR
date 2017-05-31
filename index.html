@@ -29,7 +29,18 @@
 		.expired{
 		font-size: 28px;
 		}
-		
+		.pic-hadith {
+		   position:absolute;
+		   width:100%;
+		   height:40px;   /* Height of the footer */
+		   background:#6cf;
+		   top: 810px;
+		   color:black ;
+		   font-size :26px;
+		   border-radius: 1px;
+		   border-style:solid;
+		   border-color:black;
+		}
 		.topleft {
 		position: absolute;
 		top: 320px;
@@ -364,23 +375,12 @@
 					document.getElementById("expired").style.visibility="visible";
 			  		document.getElementById("clockdiv").style.visibility="hidden";
 				}
-				
-				
-				
 			}, 10);
 			
-
 			}
 		}
-			
-
-
-
-
-
 	</script>
 
-	
 	<div class="topleft"> 
 		<b><p id ="today"> </p></b>
 		<b><p id ="date"> </p></b>
@@ -390,7 +390,7 @@
 		<b><p id ="iftar"> </p></b>
 	</div>
 				
-	<hr>	
+		
 	<div class="picleft" >
 	<p></p> 
 		<label ><b>Abu Huraira related that Rasulullah said: If anyone omits his fast even for one day in Ramadan without a concession or without being ill,then if he were to fast for the rest of his life 
@@ -399,8 +399,14 @@
 	<div class="hadeesRight">
 		<img src="ramadan-day-4.png" height= "300px" width="120%">
 	</div>
-	<div class="row-odd"><p color='white'><label ><b> Pic of the Day </b><span id="tab"> <b>Hadith of the Day</b></span></p></div>
-	<hr>		
+<!-- 
+	<hr>
+		<div height='10px' ccolor="white"><p color='white'><label ><b> Pic of the Day </b><span id="tab"> <b>Hadith of the Day</b></span></p></div>
+ -->
+
+ <div class="pic-hadith" > <b> <u>Pic of the Day</u> </b><span id="tab"> <b><u>Hadith of the Day</u></b></span></div>	
+	<hr>	
+
 	  <p><label><b><u>Ramadan Timetable 2017 of Bhubaneshwar </u></b></label></p>              
 		<table>
 			<tr class="unselected">
@@ -461,7 +467,8 @@
 		
 	
 	</script>	
-	</div>		
+	</div>	
+	
 </body>
 </html>
 
