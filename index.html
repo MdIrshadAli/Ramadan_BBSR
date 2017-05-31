@@ -26,12 +26,34 @@
 			text-align: left;
 			padding: 8px;
 		}
+		.expired{
+		font-size: 28px;
+		}
 		
 		.topleft {
 		position: absolute;
 		top: 320px;
 		left: 16px;
 		font-size: 18px;
+		}
+		.picleft{
+		border-radius: 3px;
+		border-style:solid;
+		border-color:white;
+		position: absolute;
+		height :300px;
+		width : 26%;
+		top: 500px;
+		left: 1400px;
+		font-size: 18px;
+		color: white;
+		font-size: 28px;
+		}
+		.hadeesRight{
+		position: absolute;
+		top: 500px;
+		left: 16px;
+		font-size: 18px
 		}
 		.topright {
 		position: absolute;
@@ -52,7 +74,7 @@
 			color: white;
 		}
 		.row-selected  {
-			background-color: #333;
+			bgcolor : #727575;
 			color: yellow;    
 		}
 		body{
@@ -121,9 +143,11 @@
 		cursor: default;
 		
 	}
+	#tab { display:inline-block; 
+       margin-left: 1240px; }
 		</style>
 </head>
-<body background="ramadan.jpg" height= "100%" width="100%">
+<body background="ramadan.jpg" height= "100%" width="100%" link="#C0C0C0" vlink="#808080" alink="#FF0000">
 <img src="Welcome-Ramadan-Banner.jpg" height= "200px" width="100%">
 <!-- 
 <div style="background-image: url(Welcome-Ramadan-Banner.jpg); height: 200px; width: 100%; border: 1px solid black;background-repeat: no-repeat;background-size: contain;background-size: contain;"></div>
@@ -236,7 +260,7 @@
 
 				if (j % 2 == 0) {
 					if(newdate == data[j].Date){
-						document.write("<tr class='row-selected'><td>" + data[j].Sl_No + " </td>");
+						document.write("<tr  class='row-selected'><td>" + data[j].Sl_No + " </td>");
 					}else{
 						document.write("<tr class='row-odd'><td>" + data[j].Sl_No + " </td>");
 					}
@@ -366,7 +390,17 @@
 		<b><p id ="iftar"> </p></b>
 	</div>
 				
-		<hr>			
+	<hr>	
+	<div class="picleft" >
+	<p></p> 
+		<label ><b>Abu Huraira related that Rasulullah said: If anyone omits his fast even for one day in Ramadan without a concession or without being ill,then if he were to fast for the rest of his life 
+		he could not make up for it (Bukhari).</b> <br>For more hadith ,Please visit <a href="https://www.soundvision.com/article/the-quran-and-hadith-on-ramadan">here</a></p>
+	</div>
+	<div class="hadeesRight">
+		<img src="ramadan-day-4.png" height= "300px" width="120%">
+	</div>
+	<div class="row-odd"><p color='white'><label ><b> Pic of the Day </b><span id="tab"> <b>Hadith of the Day</b></span></p></div>
+	<hr>		
 	  <p><label><b><u>Ramadan Timetable 2017 of Bhubaneshwar </u></b></label></p>              
 		<table>
 			<tr class="unselected">
