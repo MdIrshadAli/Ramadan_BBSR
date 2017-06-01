@@ -76,10 +76,11 @@ tr:nth-child(even) {
 .row-odd {
 	color: white;
 }
-.row-selected  {
-	bgcolor : #727575;
+.row-selected{
+	background-color : #333;
 	color: yellow;    
 }
+
 body{
 	text-align: center;
 	font-family: sans-serif;
