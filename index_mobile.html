@@ -5,61 +5,189 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="index.css" />
+		<style>
+		p {
+		  text-align: center;
+		  font-size: 40px;
+		}
+		.div1{
+		 text-align: left;
+		 }
+		. div2{
+		 text-align: right;
+		 }
+		 table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid black;
+			text-align: left;
+			padding: 8px;
+		}
+		
+	/* 
+	.topleft {
+		position: absolute;
+		top: 320px;
+		left: 16px;
+		font-size: 18px;
+		}
+		.topright {
+		position: absolute;
+		top: 320px;
+		right: 16px;
+		font-size: 18px;
+		}
+ */
+	.picleft{
+		color: white;
+		font-size: 30px;
+		}
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+				
+		.row-even {
+			color: black;
+		}
+		
+		.row-odd {
+			color: white;
+		}
+		.row-selected  {
+			background-color: #333;
+			color: yellow;    
+		}
+		body{
+		text-align: center;
+		font-family: sans-serif;
+		font-weight: 100;
+		}
+
+		h1{
+		  color: #396;
+		  font-weight: 100;
+		  font-size: 40px;
+		  margin: 40px 0px 20px;
+		}
+
+		#clockdiv{
+			font-family: sans-serif;
+			color: #fff;
+			display: inline-block;
+			font-weight: 100;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		#clockdiv > div{
+			padding: 10px;
+			border-radius: 3px;
+			background: #337DFF;
+			display: inline-block;
+		}
+
+		#clockdiv div > span{
+			padding: 15px;
+			border-radius: 3px;
+			background: #3498DB;
+			display: inline-block;
+		}
+
+		#clockdiv2{
+			font-family: sans-serif;
+			color: #fff;
+			display: inline-block;
+			font-weight: 100;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		#clockdiv2 > div{
+			padding: 10px;
+			border-radius: 3px;
+			background: #337DFF;
+			display: inline-block;
+		}
+
+		#clockdiv2 div > span{
+			padding: 15px;
+			border-radius: 3px;
+			background: #3498DB;
+			display: inline-block;
+		}
+		.smalltext{
+			padding-top: 5px;
+			font-size: 16px;
+		}
+	label {
+		cursor: default;
+		
+	}
+
+		</style>
 </head>
-<body background="ramadan.jpg" height= "100%" width="100%" >
+<body background="ramadan.jpg" height= "100%" width="100%" link="#FFFF00" vlink="#808080" alink="#FF0000">
   <div id="header">
   <div class="w3-bar">
    <form>
-	  <button formaction="index_mobile.html" class="w3-bar-item w3-button w3-red" style="width:50%" ><b>For Mobile version.Please click me<b></button>
+	  <button formaction="index.html" class="w3-bar-item w3-button w3-red" style="width:50%" ><b>For Desktop version.Please click me<b></button>
 	  <button formaction="https://mdirshadali.github.io/Ramadan-kolkata/" class="w3-bar-item w3-button w3-teal" style="width:50%" ><b>For Kolkata's Time Table.Please click me<b></button>
 	</form>
 	</div>
   </div>
-<img src="Welcome-Ramadan-Banner.jpg" height= "150px" width="100%">
+<img src="Welcome-Ramadan-Banner.jpg" height= "200px" width="100%">
 
 	<div class="wrapper">
 		<div class="centre">
-			<div id="expired"><p><label>Expired</label></p></div>
-			<div id="clockdiv">
+		<div id="expired"><p><label>Expired</label></p></div>
+
+		<div id="clockdiv">
 			  <div>
 				<span class="hours"></span>
 				<div class="smalltext">Hours</div>
 			  </div>
+			  
 			  <div>
 				<span class="minutes"></span>
 				<div class="smalltext">Minutes</div>
 			  </div>
+			  
 			  <div>
 				<span class="seconds"></span>
 				<div class="smalltext">Seconds</div>
 			  </div>
+			  
 			  <div>
 				<span class="msec"></span>
 				<div class="smalltext">MiliSecond</div>
 			  </div>
-			</div>
-			<p><label><b><u>Time Reamining For Iftar :</u></b></label></p>
-			<div id="clockdiv2">
-			  <div>
-				<span class="hours"></span>
-				<div class="smalltext">Hours</div>
-			  </div>
-			  <div>
-				<span class="minutes"></span>
-				<div class="smalltext">Minutes</div>
-			  </div>
-			  <div>
-				<span class="seconds"></span>
-				<div class="smalltext">Seconds</div>
-			  </div>
-				<div>
-				<span class="msec"></span>
-				<div class="smalltext">MiliSecond</div>
-			  </div>
-			</div>
-			<p><label><b><u>Time Duraton of Today's Roza  :</u></b> </label></p>
 		</div>
+		<p><label><b><u>Time Reamining For Iftar :</u></b></label></p>
+		<div id="clockdiv2">
+
+		  <div>
+			<span class="hours"></span>
+			<div class="smalltext">Hours</div>
+		  </div>
+		  <div>
+			<span class="minutes"></span>
+			<div class="smalltext">Minutes</div>
+		  </div>
+		  <div>
+			<span class="seconds"></span>
+			<div class="smalltext">Seconds</div>
+		  </div>
+		  	<div>
+			<span class="msec"></span>
+			<div class="smalltext">MiliSecond</div>
+		  </div>
+		</div>
+		<p><label><b><u>Time Duraton of Today's Roza  :</u></b> </label></p>
+	</div>
 		<div class="topleft"> 
 		<b><p id ="today"> </p></b>
 		<b><p id ="date"> </p></b>
@@ -68,17 +196,18 @@
 		<b><p id ="suhoor"> </p></b>
 		<b><p id ="iftar"> </p></b>
 	</div>
-				
+	<hr>
+	<font size="10"><b><u>Hadith of the Day</u></b>	</font>	
 	<div id="picleft">	
 		<p></p> 
 		<div id="hadith"></div>
 		<p></p>
 		<font size="5">For more hadith ,Please Click <a href="https://www.soundvision.com/article/the-quran-and-hadith-on-ramadan"><font color="FF0000">here</font></a></font>
 	</div>
-	
-	
+	<hr>	
+	<font size="10"><b><u>Pic of the Day</u> </b></font>	
 	<div id="hadeesRight"></div>
-	 <div class="pic-hadith" > <b> <u>Pic of the Day</u> </b><span id="tab"> <b><u>Hadith of the Day</u></b></span></div>	
+	 <div class="pic-hadith" >  </div>	
 	<hr>	
 	<script>
 	var text = '[' +
@@ -141,7 +270,7 @@
 
 				if (j % 2 == 0) {
 					if(newdate == data[j].Date){
-						document.write("<tr  class='row-selected'><td>" + data[j].Sl_No + " </td>");
+						document.write("<tr class='row-selected'><td>" + data[j].Sl_No + " </td>");
 					}else{
 						document.write("<tr class='row-odd'><td>" + data[j].Sl_No + " </td>");
 					}
@@ -253,11 +382,13 @@
 		function displayImage(image,hadith){
 			var elem = document.createElement("img");
 			elem.setAttribute("src", image);
-			elem.setAttribute("height", "300px");
-			elem.setAttribute("width", "120%");
+			elem.setAttribute("height", "500px");
+			elem.setAttribute("width", "50%");
 			elem.setAttribute("alt", "Rmadan Mubarak");
 			document.getElementById("hadeesRight").appendChild(elem);
 			document.getElementById("hadith").innerHTML = hadith ;
+			document.getElementById("hadith").style.fontSize = "30px" ;
+			document.getElementById("hadith").style.color = "white" ;
 		}
 
 	</script>
@@ -324,8 +455,7 @@
 		
 	
 	</script>	
-	</div>	
-	
+	</div>		
 </body>
 </html>
 

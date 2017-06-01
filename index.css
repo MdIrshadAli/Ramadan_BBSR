@@ -1,3 +1,18 @@
+#header{
+	height:40px;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 p {
   text-align: center;
   font-size: 40px;
@@ -27,7 +42,7 @@ td, th {
    width:100%;
    height:40px;   /* Height of the footer */
    background:#6cf;
-   top: 810px;
+   top: 830px;
    color:black ;
    font-size :26px;
    border-radius: 1px;
@@ -36,7 +51,7 @@ td, th {
 }
 .topleft {
 	position: absolute;
-	top: 320px;
+	top: 260px;
 	left: 16px;
 	font-size: 18px;
 }
@@ -45,22 +60,22 @@ td, th {
 	border-style:solid;
 	border-color:white;
 	position: absolute;
-	height :300px;
-	width : 26%;
+	height :330px;
+	width : 28%;
 	top: 500px;
-	left: 1380px;
+	left: 1350px;
 	font-size: 28px;
 	color: white;
 }
 #hadeesRight{
 	position: absolute;
-	top: 500px;
-	left: 16px;
+	top: 530px;
+	left: 12px;
 	font-size: 18px
 }
 .topright {
 	position: absolute;
-	top: 320px;
+	top: 260px;
 	right: 16px;
 	font-size: 18px;
 }
