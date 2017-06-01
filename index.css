@@ -1,0 +1,151 @@
+p {
+  text-align: center;
+  font-size: 40px;
+}
+.div1{
+ text-align: left;
+ }
+. div2{
+ text-align: right;
+ }
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid black;
+	text-align: left;
+	padding: 8px;
+}
+.expired{
+	font-size: 28px;
+}
+.pic-hadith {
+   position:absolute;
+   width:100%;
+   height:40px;   /* Height of the footer */
+   background:#6cf;
+   top: 810px;
+   color:black ;
+   font-size :26px;
+   border-radius: 1px;
+   border-style:solid;
+   border-color:black;
+}
+.topleft {
+	position: absolute;
+	top: 320px;
+	left: 16px;
+	font-size: 18px;
+}
+#picleft{
+	border-radius: 3px;
+	border-style:solid;
+	border-color:white;
+	position: absolute;
+	height :300px;
+	width : 26%;
+	top: 500px;
+	left: 1380px;
+	font-size: 28px;
+	color: white;
+}
+#hadeesRight{
+	position: absolute;
+	top: 500px;
+	left: 16px;
+	font-size: 18px
+}
+.topright {
+	position: absolute;
+	top: 320px;
+	right: 16px;
+	font-size: 18px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+		
+.row-even {
+	color: black;
+}
+
+.row-odd {
+	color: white;
+}
+.row-selected  {
+	bgcolor : #727575;
+	color: yellow;    
+}
+body{
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+h1{
+  color: #396;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+#clockdiv{
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+}
+
+#clockdiv > div{
+	padding: 10px;
+	border-radius: 3px;
+	background: #337DFF;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #3498DB;
+	display: inline-block;
+}
+
+#clockdiv2{
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+}
+
+#clockdiv2 > div{
+	padding: 10px;
+	border-radius: 3px;
+	background: #337DFF;
+	display: inline-block;
+}
+
+#clockdiv2 div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #3498DB;
+	display: inline-block;
+}
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+label {
+	cursor: default;
+}
+#tab { 
+	display:inline-block; 
+   margin-left: 1240px; 
+}
