@@ -73,6 +73,14 @@ td, th {
 	left: 12px;
 	font-size: 18px
 }
+#footer{
+	border-radius: 3px;
+	border-style:solid;
+	border-color:black;
+	font-size: 18px;
+	text-align: left;
+}
+
 .topright {
 	position: absolute;
 	top: 260px;
@@ -163,5 +171,21 @@ label {
 }
 #tab { 
 	display:inline-block; 
-   margin-left: 1240px; 
+   	margin-left: 1240px; 
+}
+#tab1 { 
+	display:inline-block; 
+   	margin-left: 1040px; 
+}
+#tab2 { 
+	display:inline-block; 
+   	margin-left: 450px; 
+}
+#tab3 { 
+	display:inline-block; 
+   	margin-left: 354px; 
+}
+#tab4 { 
+	display:inline-block; 
+   	margin-left: 296px; 
 }
