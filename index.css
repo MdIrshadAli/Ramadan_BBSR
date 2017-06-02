@@ -100,7 +100,7 @@ tr:nth-child(even) {
 	color: white;
 }
 .row-selected{
-	background-color : #333;
+	background-color : #333 !important;
 	color: yellow;    
 }
 
