@@ -2,44 +2,132 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<style>
-	#footer{
-		border-radius: 3px;
-		border-style:solid;
-		border-color:black;
+	<script type="text/javascript" src="timeTable.json"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<style>
+		p {
+		  text-align: center;
+		  font-size: 40px;
+		}
+		.div1{
+		 text-align: left;
+		 }
+		. div2{
+		 text-align: right;
+		 }
+		 table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border: 1px solid black;
+			text-align: left;
+			padding: 8px;
+		}
+		
+	/* 
+	.topleft {
+		position: absolute;
+		top: 320px;
+		left: 16px;
 		font-size: 18px;
-		text-align: left;
-	   	position: absolute;
-		top: 1900px;
-		width:100%;
+		}
+		.topright {
+		position: absolute;
+		top: 320px;
+		right: 16px;
+		font-size: 18px;
+		}
+ */
+	.picleft{
 		color: white;
+		font-size: 30px;
+		}
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+				
+		.row-even {
+			color: black;
+		}
+		
+		.row-odd {
+			color: white;
+		}
+		.row-selected  {
+			background-color: #333 !important;
+			color: yellow;    
+		}
+		body{
+		text-align: center;
+		font-family: sans-serif;
+		font-weight: 100;
+		}
+
+		h1{
+		  color: #396;
+		  font-weight: 100;
+		  font-size: 40px;
+		  margin: 40px 0px 20px;
+		}
+
+		#clockdiv{
+			font-family: sans-serif;
+			color: #fff;
+			display: inline-block;
+			font-weight: 100;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		#clockdiv > div{
+			padding: 10px;
+			border-radius: 3px;
+			background: #337DFF;
+			display: inline-block;
+		}
+
+		#clockdiv div > span{
+			padding: 15px;
+			border-radius: 3px;
+			background: #3498DB;
+			display: inline-block;
+		}
+
+		#clockdiv2{
+			font-family: sans-serif;
+			color: #fff;
+			display: inline-block;
+			font-weight: 100;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		#clockdiv2 > div{
+			padding: 10px;
+			border-radius: 3px;
+			background: #337DFF;
+			display: inline-block;
+		}
+
+		#clockdiv2 div > span{
+			padding: 15px;
+			border-radius: 3px;
+			background: #3498DB;
+			display: inline-block;
+		}
+		.smalltext{
+			padding-top: 5px;
+			font-size: 16px;
+		}
+	label {
+		cursor: default;
 		
 	}
-	#title{
-		margin-left: 378px; 
-		font-size: 26px;
-	}
-	#video{
-		margin-left: 700px; 
-	}
-	#body{
-	font-size: 20px;
-	color: #E5E7E9;
-	}
-	#tab2 { 
-	display:inline-block; 
-   	margin-left: 450px; 
-	}
-	#tab3 { 
-		display:inline-block; 
-		margin-left: 378px; 
-	}
-	#tab4 { 
-		display:inline-block; 
-		margin-left: 328px; 
-	}
-</style>
 
+		</style>
 </head>
 <body background="ramadan.jpg" height= "100%" width="100%" >
 <img src="eid_pic4.jpg" height= "200px" width="100%">
@@ -103,10 +191,15 @@ You can find additional information from web sites including Islamicity and book
 
 </div>	
 
-		<div id="footer"><b><u>Duaon ka Taalib : </u></b><br><span id="tab2">Md Irshad Ali 			<span id="tab2">Mobile : 8457082626</span><br>
-														Senior System Engineer			<span id="tab3">WhatsApp : 9804452637</span><br> 
-														Infosys Limited,Bhubaneshwar	<span id="tab4">Email : mdirshadali96@gmail.com</span></span>
-</div>
+			<div id="footer">
+				<p> <b><u>Duaon ka Taalib : </u><b></p>
+				<p> Md Irshad Ali  <b></p>
+				<p> Senior System Engineer </p>
+				<p> Infosys Limited,Bhubaneshwar</p>
+				<p> <b>Mobile :</b> 8457082626</p>
+				<p> <b>WhatsApp :</b> 9804452637</p>
+				<p> <b>Email :</b> mdirshadali96@gmail.com</p>
+		</div>
 
 </body>
 </html>
