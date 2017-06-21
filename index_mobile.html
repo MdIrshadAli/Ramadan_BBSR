@@ -249,9 +249,7 @@
 		}
 		var newdate = month + " " + day + ", "+ year;
 
-		if(newdate == "June 27, 2017"){
-					window.location = "eid_mobile.html";
-		}
+
 		function createtable() {
 			for(var i = 0; i< 30; i++){
 				 data[i].Duration = calculateDuration(data[i].Date,data[i].Suhoor,data[i].Iftar);
@@ -370,6 +368,10 @@
 					document.getElementById("expired").style.color = "red";
 					document.getElementById("expired").style.visibility="visible";
 			  		document.getElementById("clockdiv").style.visibility="hidden";
+			  		
+			  		if(newdate == "June 26, 2017"){
+								window.location = "eid_mobile.html";
+					}
 				}
 			}, 10);
 			
