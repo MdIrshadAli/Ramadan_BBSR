@@ -42,7 +42,7 @@ td, th {
    width:100%;
    height:40px;   /* Height of the footer */
    background:#6cf;
-   top: 830px;
+   top: 550px;
    color:black ;
    font-size :26px;
    border-radius: 1px;
@@ -60,19 +60,22 @@ td, th {
 	border-style:solid;
 	border-color:white;
 	position: absolute;
-	height :330px;
+	height :300px;
 	width : 28%;
-	top: 500px;
-	left: 1350px;
+	top: 590px;
+	left: 1335px;
 	font-size: 20px;
 	color: white;
 }
 #hadeesRight{
 	position: absolute;
-	top: 530px;
-	left: 12px;
-	font-size: 18px
+	top: 590px;
+	left: 03px;
+	font-size: 18px;
+	height :10px;
+	
 }
+
 #footer{
 	border-radius: 3px;
 	border-style:solid;
@@ -183,7 +186,7 @@ label {
 }
 #tab3 { 
 	display:inline-block; 
-   	margin-left: 354px; 
+   	margin-left: 393px; 
 }
 #tab4 { 
 	display:inline-block; 
