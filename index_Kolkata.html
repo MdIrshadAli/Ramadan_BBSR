@@ -18,7 +18,7 @@
 <body background="ramadan.jpg" height= "100%" width="100%" >
   <div id="header">
   <div class="w3-bar">
-   <form>
+   <form>                 
 	  <button formaction="https://mdirshadali.github.io/Ramadan-kolkata/" class="w3-bar-item w3-button w3-red" style="width:50%" ><b>Click for Mobile version<b></button>
 	  <button formaction="https://mdirshadali.github.io/Ramadan/" class="w3-bar-item w3-button w3-teal" style="width:50%" ><b>Click for Bhubaneshwar's TimeTable<b></button>
 	</form>
@@ -87,7 +87,6 @@
 	
 	<div id="hadeesRight"></div>
 	 <div class="pic-hadith" > <b> <u>Pic of the Day</u> </b><span id="tab"> <b><u>Hadith of the Day</u></b></span></div>	
-	    <div>Ramadan Mubarak</div>
    <hr>	
 	<script>
 	var text = '[' +																																				
@@ -136,8 +135,10 @@
 			month = 'June';
 		}
 		var newdate = month + " " + day + ", "+ year;
-	    var newdate = 'May' + " " + '17' + ", "+ '2018'; 
 
+		if(newdate == "June 27, 2018"){
+					window.location = "eid_mobile.html";
+		}
 		function createtable() {
 			for(var i = 0; i< 30; i++){
 				 data[i].Duration = calculateDuration(data[i].Date,data[i].Suhoor,data[i].Iftar);
@@ -256,8 +257,9 @@
 					document.getElementById("expired").style.color = "red";
 					document.getElementById("expired").style.visibility="visible";
 			  		document.getElementById("clockdiv").style.visibility="hidden";
-			  		
-			  		if(newdate == "June 26, 2018"){
+
+
+					if(newdate == "June 15, 2018"){
 								window.location = "eid_mobile.html";
 					}
 				}
