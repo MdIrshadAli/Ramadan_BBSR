@@ -50,28 +50,20 @@ td, th {
    border-color:black;
 }
 .topleft {
-    position: absolute;
-    top: 280px;
-    left: 16px;
-    font-size: 2vw;
-}
-#today{
-	text-align: center;
-    font-size: 2.2vw;
-}
-#date{
-	text-align: center;
-    font-size: 2.2vw;
+	position: absolute;
+	top: 260px;
+	left: 16px;
+	font-size: 18px;
 }
 #picleft{
 	border-radius: 3px;
 	border-style:solid;
 	border-color:white;
 	position: absolute;
-	height :300px;
-	width : 28%;
+	height :272px;
+	width : 28%;	
 	top: 590px;
-	left: 1335px;
+	left: 1107px;
 	font-size: 20px;
 	color: white;
 }
@@ -93,18 +85,10 @@ td, th {
 }
 
 .topright {
-	 position: absolute;
-    top: 280px;
-    right: 88px;
-    font-size: 18px;
-}
-#suhoor{
-	text-align: center;
-    font-size: 2.2vw;
-}
-#iftar{
-	text-align: left;
-    font-size: 2.2vw;
+	position: absolute;
+	top: 260px;
+	right: 16px;
+	font-size: 18px;
 }
 
 tr:nth-child(even) {
@@ -190,7 +174,7 @@ label {
 }
 #tab { 
 	display:inline-block; 
-   	margin-left: 1240px; 
+   	margin-left: 1000px; 
 }
 #tab1 { 
 	display:inline-block; 
