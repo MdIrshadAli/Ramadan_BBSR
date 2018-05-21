@@ -271,8 +271,9 @@
         function displayImage(image,hadith){
             var elem = document.createElement("img");
             elem.setAttribute("src", image);
-            elem.setAttribute("height", "300px");
-            elem.setAttribute("width", "120%");
+            elem.setAttribute("height", "268px");
+            elem.setAttribute("width", "100%");
+            elem.setAttribute("position", "absolute");
             elem.setAttribute("alt", "Rmadan Mubarak");
             document.getElementById("hadeesRight").appendChild(elem);
             document.getElementById("hadith").innerHTML = hadith ;
