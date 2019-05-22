@@ -306,6 +306,9 @@
 	
 			return totalHour + ": "+ ('0' + totalMinutes).slice(-2); 
 		}
+		function reload() {
+			document.location.reload();
+		}
 		for(var i = 0; i< 30; i++){
 			if(newdate == data[i].Date){
 				displayImage(data[i].pic,data[i].hadith);
@@ -377,7 +380,7 @@
 			  		document.getElementById("clockdiv").style.visibility="hidden";
 			  		document.getElementById("expired").style.color = "red";
 
-				 	location.reload();
+					setTimeout(reload,300000);
 
 					if(newdate == "June 15, 2019"){
 								window.location = "eid_mobile.html";
